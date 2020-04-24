@@ -34,7 +34,7 @@ class Properties extends React.Component {
           />
           <div className="card-body">
             <h5 className="card-title">{property.name}</h5>
-            <Link to={`/recipe/${recipe.id}`} className="btn cusom-button">
+            <Link to={`/property/${property.id}`} className="btn cusom-button">
               View Property
             </Link>
           </div>
@@ -53,16 +53,16 @@ class Properties extends React.Component {
       <>
         <section className="jumbotron jumbotron-fluid text-center">
           <div className="container py-5">
-            <h1 className="display-4">Properties</h1>
-            <p>Here is a list of all the properties</p>
+            <h1 className="display-4">All Properties</h1>
+            <p>Here are all of the properties</p>
           </div>
         </section>
         <div className="py-5">
           <main className="container">
             <div className="text-right mb-3">
-              <link to="/property" className="btn custom-button">
+              <Link to="/property" className="btn custom-button">
                 Create New Property
-              </link>
+              </Link>
             </div>
             <div className="row">
               {properties.length > 0 ? allProperties : noProperty}
