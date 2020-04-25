@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../components/Home";
 import Properties from "../components/Properties";
 import Property from "../components/Property";
+import NewProperty from "../components/NewProperty";
 
 export default (
   <Router>
@@ -10,6 +11,7 @@ export default (
       <Route path="/" exact component={Home} />
       <Route path="/properties" exact component={Properties} />
       <Route path="/property/:id" exact component={Property} />
+      <Route path="/property" exact component={NewProperty} />
     </Switch>
   </Router>
 );
