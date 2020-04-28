@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_193646) do
+ActiveRecord::Schema.define(version: 2020_04_28_164336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 2020_04_24_193646) do
     t.string "units", null: false
     t.text "description", null: false
     t.string "image", default: "https://raw.githubusercontent.com/tnobler/rehab_tracking_app/master/app/assets/images/sedona_rehabbed_livingroom.jpg"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "units", force: :cascade do |t|
+    t.string "number", null: false
+    t.string "floor_plan", null: false
+    t.integer "square_footage", null: false
+    t.decimal "budgeted_rehab_amount", null: false
+    t.string "rehab_status", default: "Not Started", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
