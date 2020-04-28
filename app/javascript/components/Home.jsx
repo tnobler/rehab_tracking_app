@@ -17,6 +17,10 @@ export default () => (
         >
           View Properties
         </Link>
+        <hr className="my-4" />
+        <Link to="/units" className="btn btn-lg custom-button " role="button">
+          View Units
+        </Link>
       </div>
     </div>
   </div>

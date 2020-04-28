@@ -34,7 +34,7 @@ class Properties extends React.Component {
           />
           <div className="card-body">
             <h5 className="card-title">{property.name}</h5>
-            <Link to={`/property/${property.id}`} className="btn cusom-button">
+            <Link to={`/property/${property.id}`} className="btn custom-button">
               View Property
             </Link>
           </div>

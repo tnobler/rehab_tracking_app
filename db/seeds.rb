@@ -13,3 +13,13 @@
     description: "This Property has 4 units left to rehab.",
   )
 end
+
+20.times do |i|
+  Unit.create(
+    number: "Unit #{i + 501}",
+    floor_plan: "A1",
+    square_footage: 501,
+    budgeted_rehab_amount: 7346.17,
+    rehab_status: "Not Started"
+  )
+end
