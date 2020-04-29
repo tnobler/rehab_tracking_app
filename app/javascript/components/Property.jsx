@@ -36,7 +36,6 @@ class Property extends Component {
   }
 
   deleteProperty() {
-    const confirmation = confirm("Are you sure?");
     const {
       match: {
         params: { id }
@@ -45,6 +44,7 @@ class Property extends Component {
     const url = `/api/v1/destroy/${id}`;
     const token = document.querySelector('meta[name="csrf-token"]').content;
 
+    const confirmation = confirm("Are you sure?");
     if (confirmation) {
       fetch(url, {
         method: "DELETE",

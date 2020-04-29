@@ -6,6 +6,7 @@ import Property from "../components/Property";
 import NewProperty from "../components/NewProperty";
 import Units from "../components/Units";
 import Unit from "../components/Unit";
+import NewUnit from "../components/NewUnit";
 
 export default (
   <Router>
@@ -16,6 +17,7 @@ export default (
       <Route path="/property" exact component={NewProperty} />
       <Route path="/units" exact component={Units} />
       <Route path="/unit/:id" exact component={Unit} />
+      <Route path="/unit" exact component={NewUnit} />
     </Switch>
   </Router>
 );
