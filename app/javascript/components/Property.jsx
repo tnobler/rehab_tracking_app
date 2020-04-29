@@ -36,6 +36,7 @@ class Property extends Component {
   }
 
   deleteProperty() {
+    const confirmation = confirm("Are you sure?");
     const {
       match: {
         params: { id }
@@ -43,21 +44,24 @@ class Property extends Component {
     } = this.props;
     const url = `/api/v1/destroy/${id}`;
     const token = document.querySelector('meta[name="csrf-token"]').content;
-    fetch(url, {
-      method: "DELETE",
-      headers: {
-        "X-CSRF-Token": token,
-        "Content-Type": "application/json"
-      }
-    })
-      .then(response => {
-        if (response.ok) {
-          return response.json();
+
+    if (confirmation) {
+      fetch(url, {
+        method: "DELETE",
+        headers: {
+          "X-CSRF-Token": token,
+          "Content-Type": "application/json"
         }
-        throw new Error("Network response was not ok.");
       })
-      .then(() => this.props.history.push("/properties"))
-      .catch(error => console.log(error.message));
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error("Network response was not ok.");
+        })
+        .then(() => this.props.history.push("/properties"))
+        .catch(error => console.log(error.message));
+    }
   }
 
   render() {

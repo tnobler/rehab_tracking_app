@@ -23,7 +23,7 @@ class Api::V1::UnitsController < ApplicationController
 
   def destroy
     unit&.destroy
-    render json: { message: 'Recipe deleted!' }
+    render json: { message: 'Unit deleted!' }
   end
 
   private
@@ -32,7 +32,7 @@ class Api::V1::UnitsController < ApplicationController
     params.permit(:number, :floor_plan, :square_footage, :budgeted_rehab_amount, :rehab_status)
   end
 
-  def recipe
-    @recipe ||= Recipe.find(params[:id])
+  def unit
+    @unit ||= Unit.find(params[:id])
   end
 end

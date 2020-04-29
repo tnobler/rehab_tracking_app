@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
+import Td from "./Td";
 
 class Units extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class Units extends Component {
     const { units } = this.state;
     const allUnits = (
       <div>
-        <table className="table table-hover table-striped table-condensed">
+        <table className="table table-hover table-striped table-condensed sortable">
           <thead>
             <tr>
               <th>Unit Number</th>
@@ -37,10 +38,10 @@ class Units extends Component {
             </tr>
           </thead>
           <tbody>
-            {units.map((unit, index) => {
+            {units.map(unit => {
               return (
-                <tr key={index}>
-                  <td>{unit.number}</td>
+                <tr key={unit.id}>
+                  <Td to={`/unit/${unit.id}`}>{unit.number}</Td>
                   <td>{unit.floor_plan}</td>
                   <td>{unit.square_footage}</td>
                   <td>{unit.budgeted_rehab_amount}</td>
